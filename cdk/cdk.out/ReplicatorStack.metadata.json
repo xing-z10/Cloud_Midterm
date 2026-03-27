@@ -1,0 +1,62 @@
+{
+  "/ReplicatorStack/ReplicatorFnArn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ReplicatorFnArn"
+    }
+  ],
+  "/ReplicatorStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    }
+  ],
+  "/ReplicatorStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    }
+  ],
+  "/ReplicatorStack/ReplicatorFn/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ReplicatorFn8F9D848B"
+    }
+  ],
+  "/ReplicatorStack/SrcBucketRule/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SrcBucketRule0F2CDD4F"
+    }
+  ],
+  "/ReplicatorStack/SrcBucketRule/AllowEventRuleReplicatorStackReplicatorFn866D86AC": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SrcBucketRuleAllowEventRuleReplicatorStackReplicatorFn866D86ACBE4FD9D7"
+    }
+  ],
+  "/ReplicatorStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    }
+  ],
+  "/ReplicatorStack/CDKMetadata/Condition": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadataAvailable"
+    }
+  ],
+  "/ReplicatorStack/ReplicatorFn/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ReplicatorFnServiceRoleE885E13E"
+    }
+  ],
+  "/ReplicatorStack/ReplicatorFn/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ReplicatorFnServiceRoleDefaultPolicy0BA0FD42"
+    }
+  ]
+}
