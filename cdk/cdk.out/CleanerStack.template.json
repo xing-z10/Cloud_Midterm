@@ -145,7 +145,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "e48f6c69073aa74a5bdf2574fa37eb901ab4545ca97798810f76ea0bd6ff1e11.zip"
+     "S3Key": "35239a3ef0417d74b3da0976b7c944b2b7421b3fee05e54941faad9ccbc6ce23.zip"
     },
     "Environment": {
      "Variables": {
@@ -174,7 +174,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "CleanerStack/CleanerFn/Resource",
-    "aws:asset:path": "asset.e48f6c69073aa74a5bdf2574fa37eb901ab4545ca97798810f76ea0bd6ff1e11",
+    "aws:asset:path": "asset.35239a3ef0417d74b3da0976b7c944b2b7421b3fee05e54941faad9ccbc6ce23",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }

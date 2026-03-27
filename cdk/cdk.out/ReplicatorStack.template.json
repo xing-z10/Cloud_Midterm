@@ -169,7 +169,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "285fd4460cb6c49e2b3e580592042746469ff2ad0f7db88936d523d0fb3dc1f9.zip"
+     "S3Key": "ba93eda2f6860d33c7ba9822ec09fbde67029ad4f7cd0cdbfe350bbfd3e61471.zip"
     },
     "Environment": {
      "Variables": {
@@ -201,7 +201,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "ReplicatorStack/ReplicatorFn/Resource",
-    "aws:asset:path": "asset.285fd4460cb6c49e2b3e580592042746469ff2ad0f7db88936d523d0fb3dc1f9",
+    "aws:asset:path": "asset.ba93eda2f6860d33c7ba9822ec09fbde67029ad4f7cd0cdbfe350bbfd3e61471",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
