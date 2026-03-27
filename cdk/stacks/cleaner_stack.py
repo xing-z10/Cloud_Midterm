@@ -18,34 +18,32 @@ class CleanerStack(Stack):
         construct_id: str,
         bucket_dst: s3.Bucket,
         table: dynamodb.Table,
+        disowned_ttl_sec: int,
+        timeout_sec: int,
         **kwargs,
     ):
         super().__init__(scope, construct_id, **kwargs)
 
-        # ── Lambda ───────────────────────────────────────────────────────────
         cleaner_fn = _lambda.Function(
             self, "CleanerFn",
             runtime=_lambda.Runtime.PYTHON_3_12,
             handler="handler.lambda_handler",
             code=_lambda.Code.from_asset("../lambdas/cleaner"),
-            timeout=Duration.seconds(55),   # stay safely under 1-min schedule
+            timeout=Duration.seconds(timeout_sec),
             environment={
-                "BUCKET_DST":         bucket_dst.bucket_name,
-                "TABLE_NAME":         table.table_name,
-                "DISOWNED_TTL_SEC":   "10",
+                "BUCKET_DST":        bucket_dst.bucket_name,
+                "TABLE_NAME":        table.table_name,
+                "DISOWNED_TTL_SEC":  str(disowned_ttl_sec),
             },
         )
 
-        # ── IAM permissions ──────────────────────────────────────────────────
         bucket_dst.grant_read_write(cleaner_fn)
         table.grant_read_write_data(cleaner_fn)
 
-        # ── EventBridge scheduled rule (every 1 minute) ──────────────────────
         schedule_rule = events.Rule(
             self, "CleanerSchedule",
             schedule=events.Schedule.rate(Duration.minutes(1)),
         )
         schedule_rule.add_target(targets.LambdaFunction(cleaner_fn))
 
-        # ── Outputs ──────────────────────────────────────────────────────────
         cdk.CfnOutput(self, "CleanerFnArn", value=cleaner_fn.function_arn)
